@@ -11,7 +11,13 @@
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
-    "root": true
+    "root": true,
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": false
+      }
+    ]
   },
   "engines": {
     "node": ">=16.19 <=18.x",
