@@ -7,9 +7,9 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route, Set } from '@redwoodjs/router'
+import { Router, Route, Set } from "@redwoodjs/router"
 
-import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
+import ScaffoldLayout from "src/layouts/ScaffoldLayout"
 
 import MainLayout from "src/layouts/MainLayout"
 
