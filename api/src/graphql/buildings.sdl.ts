@@ -8,8 +8,8 @@ export const schema = gql`
   }
 
   type Query {
-    buildings: [Building!]! @requireAuth
-    building(id: Int!): Building @requireAuth
+    buildings: [Building!]! @skipAuth
+    building(id: Int!): Building @skipAuth
   }
 
   input CreateBuildingInput {
