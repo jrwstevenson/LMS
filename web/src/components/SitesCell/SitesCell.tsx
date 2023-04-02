@@ -1,5 +1,7 @@
 import type { BuildingsQuery } from "types/graphql"
 import type { CellSuccessProps, CellFailureProps } from "@redwoodjs/web"
+import { Link, routes } from "@redwoodjs/router"
+import Site from "../Site/Site"
 
 export const QUERY = gql`
   query BuildingsQuery {
@@ -25,14 +27,7 @@ export const Success = ({ sites }: CellSuccessProps<BuildingsQuery>) => {
   return (
     <>
       {sites.map(site => (
-        <article key={site.id}>
-          <header>
-            <h2>{site.name}</h2>
-          </header>
-          <p>{site.description}</p>
-          <div>Posted at: {site.createdAt}</div>
-          <div>Address: {site.address}</div>
-        </article>
+        <Site key={site.id} site={site} />
       ))}
     </>
   )
