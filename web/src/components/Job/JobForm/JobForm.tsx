@@ -5,6 +5,7 @@ import {
   Label,
   TextField,
   DatetimeLocalField,
+  NumberField,
   Submit,
 } from "@redwoodjs/forms"
 
@@ -94,6 +95,45 @@ const JobForm = (props: JobFormProps) => {
         />
 
         <FieldError name="amount" className="rw-field-error" />
+
+        <Label name="contractId" className="rw-label" errorClassName="rw-label rw-label-error">
+          Contract id
+        </Label>
+
+        <NumberField
+          name="contractId"
+          defaultValue={props.job?.contractId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="contractId" className="rw-field-error" />
+
+        <Label name="companyId" className="rw-label" errorClassName="rw-label rw-label-error">
+          Company id
+        </Label>
+
+        <NumberField
+          name="companyId"
+          defaultValue={props.job?.companyId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="companyId" className="rw-field-error" />
+
+        <Label name="buildingId" className="rw-label" errorClassName="rw-label rw-label-error">
+          Building id
+        </Label>
+
+        <NumberField
+          name="buildingId"
+          defaultValue={props.job?.buildingId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="buildingId" className="rw-field-error" />
 
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">

@@ -63,6 +63,18 @@ const Job = ({ job }: Props) => {
               <th>Amount</th>
               <td>{job.amount}</td>
             </tr>
+            <tr>
+              <th>Contract id</th>
+              <td>{job.contractId}</td>
+            </tr>
+            <tr>
+              <th>Company id</th>
+              <td>{job.companyId}</td>
+            </tr>
+            <tr>
+              <th>Building id</th>
+              <td>{job.buildingId}</td>
+            </tr>
           </tbody>
         </table>
       </div>

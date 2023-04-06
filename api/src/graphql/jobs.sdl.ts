@@ -5,6 +5,15 @@ export const schema = gql`
     notes: String
     date: DateTime
     amount: Float
+    payments: [Payment]!
+    contract: Contract
+    contacts: [Contact]!
+    company: Company
+    building: Building
+    categories: [Category]!
+    contractId: Int
+    companyId: Int
+    buildingId: Int
   }
 
   type Query {
@@ -17,6 +26,9 @@ export const schema = gql`
     notes: String
     date: DateTime
     amount: Float
+    contractId: Int
+    companyId: Int
+    buildingId: Int
   }
 
   input UpdateJobInput {
@@ -24,6 +36,9 @@ export const schema = gql`
     notes: String
     date: DateTime
     amount: Float
+    contractId: Int
+    companyId: Int
+    buildingId: Int
   }
 
   type Mutation {

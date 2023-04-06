@@ -46,6 +46,9 @@ const JobsList = ({ jobs }: FindJobs) => {
             <th>Notes</th>
             <th>Date</th>
             <th>Amount</th>
+            <th>Contract id</th>
+            <th>Company id</th>
+            <th>Building id</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -57,6 +60,9 @@ const JobsList = ({ jobs }: FindJobs) => {
               <td>{truncate(job.notes)}</td>
               <td>{timeTag(job.date)}</td>
               <td>{truncate(job.amount)}</td>
+              <td>{truncate(job.contractId)}</td>
+              <td>{truncate(job.companyId)}</td>
+              <td>{truncate(job.buildingId)}</td>
               <td>
                 <nav className="rw-table-actions">
                   <Link
