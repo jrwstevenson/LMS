@@ -29,7 +29,7 @@ const MainLayout = ({ children }) => {
             <li>
               <Link
                 className="rounded px-4 py-2 transition duration-100 hover:bg-purple-600"
-                to={routes.contact()}
+                to={routes.contactUs()}
               >
                 Contact
               </Link>

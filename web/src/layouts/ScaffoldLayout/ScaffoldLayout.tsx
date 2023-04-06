@@ -15,6 +15,11 @@ const ScaffoldLayout = ({ title, titleTo, buttonLabel, buttonTo, children }: Lay
       <Toaster toastOptions={{ className: "rw-toast", duration: 6000 }} />
       <header className="rw-header">
         <h1 className="rw-heading rw-heading-primary">
+          <Link to={routes.home()} className="rw-link">
+            LMS
+          </Link>
+        </h1>
+        <h1 className="rw-heading rw-heading-primary">
           <Link to={routes[titleTo]()} className="rw-link">
             {title}
           </Link>
