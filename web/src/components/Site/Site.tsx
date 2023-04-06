@@ -8,14 +8,16 @@ interface Props {
 const Site = ({ site }: Props) => {
   return (
     <div key={site.id}>
-      <header>
+      <header className="text-xl font-semibold text-blue-700">
         <h2>
           <Link to={routes.site({ id: site.id })}>{site.name}</Link>
         </h2>
       </header>
-      <p>{site.description}</p>
-      <div>Posted at: {site.createdAt}</div>
-      <div>Address: {site.address}</div>
+      <div className="mt-2 font-light text-gray-900">
+        <p>{site.description}</p>
+        <div>Posted at: {site.createdAt}</div>
+        <div>Address: {site.address}</div>
+      </div>
     </div>
   )
 }
