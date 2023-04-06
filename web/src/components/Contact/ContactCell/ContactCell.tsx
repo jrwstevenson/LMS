@@ -12,6 +12,9 @@ export const QUERY = gql`
       email
       phone
       notes
+      contractId
+      jobId
+      companyId
     }
   }
 `

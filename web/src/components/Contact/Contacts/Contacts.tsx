@@ -46,6 +46,9 @@ const ContactsList = ({ contacts }: FindContacts) => {
             <th>Email</th>
             <th>Phone</th>
             <th>Notes</th>
+            <th>Contract id</th>
+            <th>Job id</th>
+            <th>Company id</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -57,6 +60,9 @@ const ContactsList = ({ contacts }: FindContacts) => {
               <td>{truncate(contact.email)}</td>
               <td>{truncate(contact.phone)}</td>
               <td>{truncate(contact.notes)}</td>
+              <td>{truncate(contact.contractId)}</td>
+              <td>{truncate(contact.jobId)}</td>
+              <td>{truncate(contact.companyId)}</td>
               <td>
                 <nav className="rw-table-actions">
                   <Link

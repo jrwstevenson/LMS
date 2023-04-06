@@ -1,4 +1,12 @@
-import { Form, FormError, FieldError, Label, TextField, Submit } from "@redwoodjs/forms"
+import {
+  Form,
+  FormError,
+  FieldError,
+  Label,
+  TextField,
+  NumberField,
+  Submit,
+} from "@redwoodjs/forms"
 
 import type { EditContactById, UpdateContactInput } from "types/graphql"
 import type { RWGqlError } from "@redwoodjs/forms"
@@ -79,6 +87,45 @@ const ContactForm = (props: ContactFormProps) => {
         />
 
         <FieldError name="notes" className="rw-field-error" />
+
+        <Label name="contractId" className="rw-label" errorClassName="rw-label rw-label-error">
+          Contract id
+        </Label>
+
+        <NumberField
+          name="contractId"
+          defaultValue={props.contact?.contractId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="contractId" className="rw-field-error" />
+
+        <Label name="jobId" className="rw-label" errorClassName="rw-label rw-label-error">
+          Job id
+        </Label>
+
+        <NumberField
+          name="jobId"
+          defaultValue={props.contact?.jobId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="jobId" className="rw-field-error" />
+
+        <Label name="companyId" className="rw-label" errorClassName="rw-label rw-label-error">
+          Company id
+        </Label>
+
+        <NumberField
+          name="companyId"
+          defaultValue={props.contact?.companyId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="companyId" className="rw-field-error" />
 
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">

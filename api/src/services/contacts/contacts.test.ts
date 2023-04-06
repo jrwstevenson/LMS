@@ -24,20 +24,20 @@ describe("contacts", () => {
 
   scenario("creates a contact", async () => {
     const result = await createContact({
-      input: { name: "String8146953" },
+      input: { name: "String3038921" },
     })
 
-    expect(result.name).toEqual("String8146953")
+    expect(result.name).toEqual("String3038921")
   })
 
   scenario("updates a contact", async (scenario: StandardScenario) => {
     const original = (await contact({ id: scenario.contact.one.id })) as Contact
     const result = await updateContact({
       id: original.id,
-      input: { name: "String19311512" },
+      input: { name: "String53815702" },
     })
 
-    expect(result.name).toEqual("String19311512")
+    expect(result.name).toEqual("String53815702")
   })
 
   scenario("deletes a contact", async (scenario: StandardScenario) => {
