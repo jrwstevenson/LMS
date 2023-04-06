@@ -2,9 +2,12 @@ export const schema = gql`
   type Building {
     id: Int!
     name: String!
+    notes: String
     description: String!
     address: String!
     createdAt: DateTime!
+    Contract: [Contract]!
+    Job: [Job]!
   }
 
   type Query {
@@ -14,12 +17,14 @@ export const schema = gql`
 
   input CreateBuildingInput {
     name: String!
+    notes: String
     description: String!
     address: String!
   }
 
   input UpdateBuildingInput {
     name: String
+    notes: String
     description: String
     address: String
   }

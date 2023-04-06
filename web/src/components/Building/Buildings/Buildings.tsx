@@ -43,6 +43,7 @@ const BuildingsList = ({ buildings }: FindBuildings) => {
           <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>Notes</th>
             <th>Description</th>
             <th>Address</th>
             <th>Created at</th>
@@ -54,6 +55,7 @@ const BuildingsList = ({ buildings }: FindBuildings) => {
             <tr key={building.id}>
               <td>{truncate(building.id)}</td>
               <td>{truncate(building.name)}</td>
+              <td>{truncate(building.notes)}</td>
               <td>{truncate(building.description)}</td>
               <td>{truncate(building.address)}</td>
               <td>{timeTag(building.createdAt)}</td>

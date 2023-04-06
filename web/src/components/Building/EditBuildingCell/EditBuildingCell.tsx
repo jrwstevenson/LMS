@@ -12,6 +12,7 @@ export const QUERY = gql`
     building: building(id: $id) {
       id
       name
+      notes
       description
       address
       createdAt
@@ -23,6 +24,7 @@ const UPDATE_BUILDING_MUTATION = gql`
     updateBuilding(id: $id, input: $input) {
       id
       name
+      notes
       description
       address
       createdAt

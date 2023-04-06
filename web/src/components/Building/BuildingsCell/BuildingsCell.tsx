@@ -10,6 +10,7 @@ export const QUERY = gql`
     buildings {
       id
       name
+      notes
       description
       address
       createdAt

@@ -41,6 +41,19 @@ const BuildingForm = (props: BuildingFormProps) => {
 
         <FieldError name="name" className="rw-field-error" />
 
+        <Label name="notes" className="rw-label" errorClassName="rw-label rw-label-error">
+          Notes
+        </Label>
+
+        <TextField
+          name="notes"
+          defaultValue={props.building?.notes}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="notes" className="rw-field-error" />
+
         <Label name="description" className="rw-label" errorClassName="rw-label rw-label-error">
           Description
         </Label>

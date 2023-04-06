@@ -52,6 +52,10 @@ const Building = ({ building }: Props) => {
               <td>{building.name}</td>
             </tr>
             <tr>
+              <th>Notes</th>
+              <td>{building.notes}</td>
+            </tr>
+            <tr>
               <th>Description</th>
               <td>{building.description}</td>
             </tr>

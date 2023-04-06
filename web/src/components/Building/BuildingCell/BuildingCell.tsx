@@ -9,6 +9,7 @@ export const QUERY = gql`
     building: building(id: $id) {
       id
       name
+      notes
       description
       address
       createdAt

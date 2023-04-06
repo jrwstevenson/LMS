@@ -24,12 +24,18 @@ describe("buildings", () => {
 
   scenario("creates a building", async () => {
     const result = await createBuilding({
-      input: { name: "String", description: "String", address: "String" },
+      input: {
+        name: "String",
+        description: "String",
+        address: "String",
+        createdAt: "2023-04-06T16:52:16.368Z",
+      },
     })
 
     expect(result.name).toEqual("String")
     expect(result.description).toEqual("String")
     expect(result.address).toEqual("String")
+    expect(result.createdAt).toEqual(new Date("2023-04-06T16:52:16.368Z"))
   })
 
   scenario("updates a building", async (scenario: StandardScenario) => {

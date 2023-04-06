@@ -13,14 +13,14 @@ generator client {
 // TODO: Please remove the following example:
 
 model Building {
-  id          Int      @id @unique @default(autoincrement())
+  id          Int        @id @unique @default(autoincrement())
   name        String
   notes       String?
   description String
   address     String
   createdAt   DateTime
-  // Contract    Contract[]
-  // Job         Job[]
+  Contract    Contract[]
+  Job         Job[]
 }
 
 model Category {
@@ -34,12 +34,12 @@ model Category {
 }
 
 model Contract {
-  id        Int       @id @unique @default(autoincrement())
-  name      String
-  notes     String?
-  startDate DateTime?
-  endDate   DateTime?
-  amount    Float?
+  id         Int       @id @unique @default(autoincrement())
+  name       String
+  notes      String?
+  startDate  DateTime?
+  endDate    DateTime?
+  amount     Float?
   // building   Building   @relation(fields: [buildingId], references: [id])
   // categories Category[]
   // job        Job[]
@@ -48,14 +48,16 @@ model Contract {
   // payments   Payment[]
   // buildingId Int
   // companyId  Int?
+  Building   Building? @relation(fields: [buildingId], references: [id])
+  buildingId Int?
 }
 
 model Job {
-  id     Int       @id @unique @default(autoincrement())
-  name   String
-  notes  String?
-  date   DateTime?
-  amount Float?
+  id         Int       @id @unique @default(autoincrement())
+  name       String
+  notes      String?
+  date       DateTime?
+  amount     Float?
   // payments   Payment[]
   // contract   Contract?  @relation(fields: [contractId], references: [id])
   // contacts   Contact[]
@@ -65,6 +67,8 @@ model Job {
   // contractId Int?
   // companyId  Int?
   // buildingId Int?
+  Building   Building? @relation(fields: [buildingId], references: [id])
+  buildingId Int?
 }
 
 model Company {
