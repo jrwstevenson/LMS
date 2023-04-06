@@ -24,20 +24,20 @@ describe("companies", () => {
 
   scenario("creates a company", async () => {
     const result = await createCompany({
-      input: { name: "String1007381" },
+      input: { name: "String4825429" },
     })
 
-    expect(result.name).toEqual("String1007381")
+    expect(result.name).toEqual("String4825429")
   })
 
   scenario("updates a company", async (scenario: StandardScenario) => {
     const original = (await company({ id: scenario.company.one.id })) as Company
     const result = await updateCompany({
       id: original.id,
-      input: { name: "String34544142" },
+      input: { name: "String36468502" },
     })
 
-    expect(result.name).toEqual("String34544142")
+    expect(result.name).toEqual("String36468502")
   })
 
   scenario("deletes a company", async (scenario: StandardScenario) => {

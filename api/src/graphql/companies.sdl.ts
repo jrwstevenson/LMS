@@ -3,6 +3,10 @@ export const schema = gql`
     id: Int!
     name: String!
     notes: String
+    contacts: [Contact]!
+    Contract: [Contract]!
+    Job: [Job]!
+    Payment: [Payment]!
   }
 
   type Query {
