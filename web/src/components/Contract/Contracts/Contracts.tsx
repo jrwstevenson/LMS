@@ -47,6 +47,8 @@ const ContractsList = ({ contracts }: FindContracts) => {
             <th>Start date</th>
             <th>End date</th>
             <th>Amount</th>
+            <th>Building id</th>
+            <th>Company id</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -59,6 +61,8 @@ const ContractsList = ({ contracts }: FindContracts) => {
               <td>{timeTag(contract.startDate)}</td>
               <td>{timeTag(contract.endDate)}</td>
               <td>{truncate(contract.amount)}</td>
+              <td>{truncate(contract.buildingId)}</td>
+              <td>{truncate(contract.companyId)}</td>
               <td>
                 <nav className="rw-table-actions">
                   <Link

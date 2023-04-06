@@ -5,6 +5,7 @@ import {
   Label,
   TextField,
   DatetimeLocalField,
+  NumberField,
   Submit,
 } from "@redwoodjs/forms"
 
@@ -107,6 +108,33 @@ const ContractForm = (props: ContractFormProps) => {
         />
 
         <FieldError name="amount" className="rw-field-error" />
+
+        <Label name="buildingId" className="rw-label" errorClassName="rw-label rw-label-error">
+          Building id
+        </Label>
+
+        <NumberField
+          name="buildingId"
+          defaultValue={props.contract?.buildingId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
+
+        <FieldError name="buildingId" className="rw-field-error" />
+
+        <Label name="companyId" className="rw-label" errorClassName="rw-label rw-label-error">
+          Company id
+        </Label>
+
+        <NumberField
+          name="companyId"
+          defaultValue={props.contract?.companyId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="companyId" className="rw-field-error" />
 
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">

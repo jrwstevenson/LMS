@@ -6,6 +6,14 @@ export const schema = gql`
     startDate: DateTime
     endDate: DateTime
     amount: Float
+    building: Building!
+    categories: [Category]!
+    job: [Job]!
+    contacts: [Contact]!
+    company: Company
+    payments: [Payment]!
+    buildingId: Int!
+    companyId: Int
   }
 
   type Query {
@@ -19,6 +27,8 @@ export const schema = gql`
     startDate: DateTime
     endDate: DateTime
     amount: Float
+    buildingId: Int!
+    companyId: Int
   }
 
   input UpdateContractInput {
@@ -27,6 +37,8 @@ export const schema = gql`
     startDate: DateTime
     endDate: DateTime
     amount: Float
+    buildingId: Int
+    companyId: Int
   }
 
   type Mutation {

@@ -14,6 +14,8 @@ export const QUERY = gql`
       startDate
       endDate
       amount
+      buildingId
+      companyId
     }
   }
 `

@@ -16,6 +16,8 @@ export const QUERY = gql`
       startDate
       endDate
       amount
+      buildingId
+      companyId
     }
   }
 `
@@ -28,6 +30,8 @@ const UPDATE_CONTRACT_MUTATION = gql`
       startDate
       endDate
       amount
+      buildingId
+      companyId
     }
   }
 `

@@ -67,6 +67,14 @@ const Contract = ({ contract }: Props) => {
               <th>Amount</th>
               <td>{contract.amount}</td>
             </tr>
+            <tr>
+              <th>Building id</th>
+              <td>{contract.buildingId}</td>
+            </tr>
+            <tr>
+              <th>Company id</th>
+              <td>{contract.companyId}</td>
+            </tr>
           </tbody>
         </table>
       </div>
