@@ -44,6 +44,8 @@ const CategoriesList = ({ categories }: FindCategories) => {
             <th>Id</th>
             <th>Name</th>
             <th>Notes</th>
+            <th>Contract id</th>
+            <th>Job id</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -53,6 +55,8 @@ const CategoriesList = ({ categories }: FindCategories) => {
               <td>{truncate(category.id)}</td>
               <td>{truncate(category.name)}</td>
               <td>{truncate(category.notes)}</td>
+              <td>{truncate(category.contractId)}</td>
+              <td>{truncate(category.jobId)}</td>
               <td>
                 <nav className="rw-table-actions">
                   <Link

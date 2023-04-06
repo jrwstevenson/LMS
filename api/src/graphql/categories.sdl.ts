@@ -3,21 +3,29 @@ export const schema = gql`
     id: Int!
     name: String!
     notes: String
+    Contract: Contract
+    contractId: Int
+    Job: Job
+    jobId: Int
   }
 
   type Query {
-    categories: [Category!]! @requireAuth
-    category(id: Int!): Category @requireAuth
+    categories: [Category!]! @skipAuth
+    category(id: Int!): Category @skipAuth
   }
 
   input CreateCategoryInput {
     name: String!
     notes: String
+    contractId: Int
+    jobId: Int
   }
 
   input UpdateCategoryInput {
     name: String
     notes: String
+    contractId: Int
+    jobId: Int
   }
 
   type Mutation {

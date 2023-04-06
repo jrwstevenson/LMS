@@ -55,6 +55,14 @@ const Category = ({ category }: Props) => {
               <th>Notes</th>
               <td>{category.notes}</td>
             </tr>
+            <tr>
+              <th>Contract id</th>
+              <td>{category.contractId}</td>
+            </tr>
+            <tr>
+              <th>Job id</th>
+              <td>{category.jobId}</td>
+            </tr>
           </tbody>
         </table>
       </div>

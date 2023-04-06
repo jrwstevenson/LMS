@@ -24,17 +24,17 @@ model Building {
 }
 
 model Category {
-  id    Int     @id @unique @default(autoincrement())
-  name  String  @unique
-  notes String?
-  // Contract   Contract? @relation(fields: [contractId], references: [id])
-  // contractId Int?
-  // Job        Job?      @relation(fields: [jobId], references: [id])
-  // jobId      Int?
+  id         Int       @id @unique @default(autoincrement())
+  name       String    @unique
+  notes      String?
+  Contract   Contract? @relation(fields: [contractId], references: [id])
+  contractId Int?
+  Job        Job?      @relation(fields: [jobId], references: [id])
+  jobId      Int?
 }
 
 model Contract {
-  id         Int       @id @unique @default(autoincrement())
+  id         Int        @id @unique @default(autoincrement())
   name       String
   notes      String?
   startDate  DateTime?
@@ -48,12 +48,13 @@ model Contract {
   // payments   Payment[]
   // buildingId Int
   // companyId  Int?
-  Building   Building? @relation(fields: [buildingId], references: [id])
+  Building   Building?  @relation(fields: [buildingId], references: [id])
   buildingId Int?
+  Category   Category[]
 }
 
 model Job {
-  id         Int       @id @unique @default(autoincrement())
+  id         Int        @id @unique @default(autoincrement())
   name       String
   notes      String?
   date       DateTime?
@@ -67,8 +68,9 @@ model Job {
   // contractId Int?
   // companyId  Int?
   // buildingId Int?
-  Building   Building? @relation(fields: [buildingId], references: [id])
+  Building   Building?  @relation(fields: [buildingId], references: [id])
   buildingId Int?
+  Category   Category[]
 }
 
 model Company {

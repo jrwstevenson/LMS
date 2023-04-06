@@ -13,6 +13,8 @@ export const QUERY = gql`
       id
       name
       notes
+      contractId
+      jobId
     }
   }
 `
@@ -22,6 +24,8 @@ const UPDATE_CATEGORY_MUTATION = gql`
       id
       name
       notes
+      contractId
+      jobId
     }
   }
 `

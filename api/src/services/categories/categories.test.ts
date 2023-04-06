@@ -24,20 +24,20 @@ describe("categories", () => {
 
   scenario("creates a category", async () => {
     const result = await createCategory({
-      input: { name: "String4871260" },
+      input: { name: "String2862555" },
     })
 
-    expect(result.name).toEqual("String4871260")
+    expect(result.name).toEqual("String2862555")
   })
 
   scenario("updates a category", async (scenario: StandardScenario) => {
     const original = (await category({ id: scenario.category.one.id })) as Category
     const result = await updateCategory({
       id: original.id,
-      input: { name: "String63191352" },
+      input: { name: "String74164332" },
     })
 
-    expect(result.name).toEqual("String63191352")
+    expect(result.name).toEqual("String74164332")
   })
 
   scenario("deletes a category", async (scenario: StandardScenario) => {
