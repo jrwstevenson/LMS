@@ -12,6 +12,10 @@ export const QUERY = gql`
       amount
       date
       note
+      contractId
+      jobId
+      contactId
+      companyId
     }
   }
 `

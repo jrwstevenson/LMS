@@ -5,6 +5,7 @@ import {
   Label,
   TextField,
   DatetimeLocalField,
+  NumberField,
   Submit,
 } from "@redwoodjs/forms"
 
@@ -80,6 +81,58 @@ const PaymentForm = (props: PaymentFormProps) => {
         />
 
         <FieldError name="note" className="rw-field-error" />
+
+        <Label name="contractId" className="rw-label" errorClassName="rw-label rw-label-error">
+          Contract id
+        </Label>
+
+        <NumberField
+          name="contractId"
+          defaultValue={props.payment?.contractId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="contractId" className="rw-field-error" />
+
+        <Label name="jobId" className="rw-label" errorClassName="rw-label rw-label-error">
+          Job id
+        </Label>
+
+        <NumberField
+          name="jobId"
+          defaultValue={props.payment?.jobId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="jobId" className="rw-field-error" />
+
+        <Label name="contactId" className="rw-label" errorClassName="rw-label rw-label-error">
+          Contact id
+        </Label>
+
+        <NumberField
+          name="contactId"
+          defaultValue={props.payment?.contactId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="contactId" className="rw-field-error" />
+
+        <Label name="companyId" className="rw-label" errorClassName="rw-label rw-label-error">
+          Company id
+        </Label>
+
+        <NumberField
+          name="companyId"
+          defaultValue={props.payment?.companyId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="companyId" className="rw-field-error" />
 
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">

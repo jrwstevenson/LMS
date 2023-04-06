@@ -1,4 +1,4 @@
-import type { QueryResolvers, MutationResolvers } from "types/graphql"
+import type { QueryResolvers, MutationResolvers, PaymentRelationResolvers } from "types/graphql"
 
 import { db } from "src/lib/db"
 
@@ -29,4 +29,19 @@ export const deletePayment: MutationResolvers["deletePayment"] = ({ id }) => {
   return db.payment.delete({
     where: { id },
   })
+}
+
+export const Payment: PaymentRelationResolvers = {
+  contract: (_obj, { root }) => {
+    return db.payment.findUnique({ where: { id: root?.id } }).contract()
+  },
+  job: (_obj, { root }) => {
+    return db.payment.findUnique({ where: { id: root?.id } }).job()
+  },
+  contact: (_obj, { root }) => {
+    return db.payment.findUnique({ where: { id: root?.id } }).contact()
+  },
+  company: (_obj, { root }) => {
+    return db.payment.findUnique({ where: { id: root?.id } }).company()
+  },
 }

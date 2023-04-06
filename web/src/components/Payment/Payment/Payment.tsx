@@ -59,6 +59,22 @@ const Payment = ({ payment }: Props) => {
               <th>Note</th>
               <td>{payment.note}</td>
             </tr>
+            <tr>
+              <th>Contract id</th>
+              <td>{payment.contractId}</td>
+            </tr>
+            <tr>
+              <th>Job id</th>
+              <td>{payment.jobId}</td>
+            </tr>
+            <tr>
+              <th>Contact id</th>
+              <td>{payment.contactId}</td>
+            </tr>
+            <tr>
+              <th>Company id</th>
+              <td>{payment.companyId}</td>
+            </tr>
           </tbody>
         </table>
       </div>
