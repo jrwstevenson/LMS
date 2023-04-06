@@ -20,6 +20,12 @@ import { useAuth } from "./auth"
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
+      <Set wrap={ScaffoldLayout} title="Payments" titleTo="payments" buttonLabel="New Payment" buttonTo="newPayment">
+        <Route path="/payments/new" page={PaymentNewPaymentPage} name="newPayment" />
+        <Route path="/payments/{id:Int}/edit" page={PaymentEditPaymentPage} name="editPayment" />
+        <Route path="/payments/{id:Int}" page={PaymentPaymentPage} name="payment" />
+        <Route path="/payments" page={PaymentPaymentsPage} name="payments" />
+      </Set>
       <Set wrap={ScaffoldLayout} title="Contacts" titleTo="contacts" buttonLabel="New Contact" buttonTo="newContact">
         <Route path="/contacts/new" page={ContactNewContactPage} name="newContact" />
         <Route path="/contacts/{id:Int}/edit" page={ContactEditContactPage} name="editContact" />
