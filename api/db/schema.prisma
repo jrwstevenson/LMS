@@ -19,18 +19,16 @@ model Building {
   description String
   address     String
   createdAt   DateTime
-  Contract    Contract[]
-  Job         Job[]
+  contracts   Contract[]
+  jobs        Job[]
 }
 
 model Category {
-  id         Int       @id @unique @default(autoincrement())
-  name       String    @unique
-  notes      String?
-  Contract   Contract? @relation(fields: [contractId], references: [id])
-  contractId Int?
-  Job        Job?      @relation(fields: [jobId], references: [id])
-  jobId      Int?
+  id        Int        @id @unique @default(autoincrement())
+  name      String     @unique
+  notes     String?
+  contracts Contract[]
+  jobs      Job[]
 }
 
 model Contract {
@@ -41,13 +39,13 @@ model Contract {
   endDate    DateTime?
   amount     Float?
   building   Building   @relation(fields: [buildingId], references: [id])
-  categories Category[]
-  job        Job[]
-  contacts   Contact[]
-  company    Company?   @relation(fields: [companyId], references: [id])
-  payments   Payment[]
   buildingId Int
+  company    Company?   @relation(fields: [companyId], references: [id])
   companyId  Int?
+  categories Category[]
+  contacts   Contact[]
+  jobs       Job[]
+  payments   Payment[]
 }
 
 model Job {
@@ -56,25 +54,24 @@ model Job {
   notes      String?
   date       DateTime?
   amount     Float?
-  payments   Payment[]
-  contract   Contract?  @relation(fields: [contractId], references: [id])
-  contacts   Contact[]
-  company    Company?   @relation(fields: [companyId], references: [id])
   building   Building?  @relation(fields: [buildingId], references: [id])
-  categories Category[]
-  contractId Int?
-  companyId  Int?
   buildingId Int?
+  company    Company?   @relation(fields: [companyId], references: [id])
+  companyId  Int?
+  contract   Contract?  @relation(fields: [contractId], references: [id])
+  contractId Int?
+  categories Category[]
+  contacts   Contact[]
+  payments   Payment[]
 }
 
 model Company {
-  id       Int        @id @unique @default(autoincrement())
-  name     String     @unique
-  notes    String?
-  contacts Contact[]
-  Contract Contract[]
-  Job      Job[]
-  Payment  Payment[]
+  id        Int        @id @unique @default(autoincrement())
+  name      String     @unique
+  notes     String?
+  contacts  Contact[]
+  contracts Contract[]
+  jobs      Job[]
 }
 
 model Contact {
@@ -83,28 +80,23 @@ model Contact {
   email      String?
   phone      String?
   notes      String?
-  Contract   Contract? @relation(fields: [contractId], references: [id])
-  contractId Int?
-  Job        Job?      @relation(fields: [jobId], references: [id])
-  jobId      Int?
-  Company    Company?  @relation(fields: [companyId], references: [id])
+  company    Company?  @relation(fields: [companyId], references: [id])
   companyId  Int?
-  Payment    Payment[]
+  contract   Contract? @relation(fields: [contractId], references: [id])
+  contractId Int?
+  job        Job?      @relation(fields: [jobId], references: [id])
+  jobId      Int?
 }
 
 model Payment {
   id         Int       @id @unique @default(autoincrement())
   amount     Float?
   date       DateTime?
-  note       String?
+  notes      String?
   contract   Contract? @relation(fields: [contractId], references: [id])
-  job        Job?      @relation(fields: [jobId], references: [id])
-  contact    Contact?  @relation(fields: [contactId], references: [id])
-  company    Company?  @relation(fields: [companyId], references: [id])
   contractId Int?
+  job        Job?      @relation(fields: [jobId], references: [id])
   jobId      Int?
-  contactId  Int?
-  companyId  Int?
 }
 
 model User {
