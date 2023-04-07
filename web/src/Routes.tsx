@@ -32,7 +32,9 @@ const Routes = () => {
       </Set>
       {/* Admin */}
       <Private unauthenticated="home">
-        <Route path="/admin" page={AdminPage} name="admin" />
+        <Set wrap={ScaffoldLayout} title="Admin" titleTo="admin">
+          <Route path="/admin" page={AdminPage} name="admin" />
+        </Set>
         <Set wrap={ScaffoldLayout} title="Payments" titleTo="payments" buttonLabel="New Payment" buttonTo="newPayment">
           <Route path="/admin/payments/new" page={PaymentNewPaymentPage} name="newPayment" />
           <Route path="/admin/payments/{id:Int}/edit" page={PaymentEditPaymentPage} name="editPayment" />

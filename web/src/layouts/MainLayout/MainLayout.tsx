@@ -18,6 +18,16 @@ const MainLayout = ({ children }) => {
         </h1>
         <nav>
           <ul className="relative flex items-center font-light">
+            {isAuthenticated && (
+              <li>
+                <Link
+                  className="rounded px-4 py-2 transition duration-100 hover:bg-purple-600"
+                  to={routes.admin()}
+                >
+                  Admin
+                </Link>
+              </li>
+            )}
             <li>
               <Link
                 className="rounded px-4 py-2 transition duration-100 hover:bg-purple-600"
