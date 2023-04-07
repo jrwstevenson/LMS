@@ -35,13 +35,10 @@ export const Company: CompanyRelationResolvers = {
   contacts: (_obj, { root }) => {
     return db.company.findUnique({ where: { id: root?.id } }).contacts()
   },
-  Contract: (_obj, { root }) => {
-    return db.company.findUnique({ where: { id: root?.id } }).Contract()
+  contracts: (_obj, { root }) => {
+    return db.company.findUnique({ where: { id: root?.id } }).contracts()
   },
-  Job: (_obj, { root }) => {
-    return db.company.findUnique({ where: { id: root?.id } }).Job()
-  },
-  Payment: (_obj, { root }) => {
-    return db.company.findUnique({ where: { id: root?.id } }).Payment()
+  jobs: (_obj, { root }) => {
+    return db.company.findUnique({ where: { id: root?.id } }).jobs()
   },
 }

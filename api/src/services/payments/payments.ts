@@ -38,10 +38,4 @@ export const Payment: PaymentRelationResolvers = {
   job: (_obj, { root }) => {
     return db.payment.findUnique({ where: { id: root?.id } }).job()
   },
-  contact: (_obj, { root }) => {
-    return db.payment.findUnique({ where: { id: root?.id } }).contact()
-  },
-  company: (_obj, { root }) => {
-    return db.payment.findUnique({ where: { id: root?.id } }).company()
-  },
 }

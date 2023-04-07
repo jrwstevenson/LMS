@@ -13,18 +13,19 @@ generator client {
 // TODO: Please remove the following example:
 
 model Building {
-  id          Int        @id @unique @default(autoincrement())
+  id          Int        @id @unique
   name        String
   notes       String?
   description String
   address     String
   createdAt   DateTime
+  contacts    Contact[]
   contracts   Contract[]
   jobs        Job[]
 }
 
 model Category {
-  id        Int        @id @unique @default(autoincrement())
+  id        Int        @id @unique
   name      String     @unique
   notes     String?
   contracts Contract[]
@@ -32,7 +33,7 @@ model Category {
 }
 
 model Contract {
-  id         Int        @id @unique @default(autoincrement())
+  id         Int        @id @unique
   name       String
   notes      String?
   startDate  DateTime?
@@ -49,7 +50,7 @@ model Contract {
 }
 
 model Job {
-  id         Int        @id @unique @default(autoincrement())
+  id         Int        @id @unique
   name       String
   notes      String?
   date       DateTime?
@@ -80,6 +81,8 @@ model Contact {
   email      String?
   phone      String?
   notes      String?
+  building   Building? @relation(fields: [buildingId], references: [id])
+  buildingId Int?
   company    Company?  @relation(fields: [companyId], references: [id])
   companyId  Int?
   contract   Contract? @relation(fields: [contractId], references: [id])

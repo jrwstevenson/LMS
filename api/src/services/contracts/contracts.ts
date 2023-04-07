@@ -35,17 +35,17 @@ export const Contract: ContractRelationResolvers = {
   building: (_obj, { root }) => {
     return db.contract.findUnique({ where: { id: root?.id } }).building()
   },
+  company: (_obj, { root }) => {
+    return db.contract.findUnique({ where: { id: root?.id } }).company()
+  },
   categories: (_obj, { root }) => {
     return db.contract.findUnique({ where: { id: root?.id } }).categories()
-  },
-  job: (_obj, { root }) => {
-    return db.contract.findUnique({ where: { id: root?.id } }).job()
   },
   contacts: (_obj, { root }) => {
     return db.contract.findUnique({ where: { id: root?.id } }).contacts()
   },
-  company: (_obj, { root }) => {
-    return db.contract.findUnique({ where: { id: root?.id } }).company()
+  jobs: (_obj, { root }) => {
+    return db.contract.findUnique({ where: { id: root?.id } }).jobs()
   },
   payments: (_obj, { root }) => {
     return db.contract.findUnique({ where: { id: root?.id } }).payments()

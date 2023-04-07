@@ -24,9 +24,10 @@ describe("jobs", () => {
 
   scenario("creates a job", async () => {
     const result = await createJob({
-      input: { name: "String" },
+      input: { id: 3053460, name: "String" },
     })
 
+    expect(result.id).toEqual(3053460)
     expect(result.name).toEqual("String")
   })
 
@@ -34,10 +35,10 @@ describe("jobs", () => {
     const original = (await job({ id: scenario.job.one.id })) as Job
     const result = await updateJob({
       id: original.id,
-      input: { name: "String2" },
+      input: { id: 3021471 },
     })
 
-    expect(result.name).toEqual("String2")
+    expect(result.id).toEqual(3021471)
   })
 
   scenario("deletes a job", async (scenario: StandardScenario) => {

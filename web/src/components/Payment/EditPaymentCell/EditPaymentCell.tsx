@@ -13,11 +13,9 @@ export const QUERY = gql`
       id
       amount
       date
-      note
+      notes
       contractId
       jobId
-      contactId
-      companyId
     }
   }
 `
@@ -27,11 +25,9 @@ const UPDATE_PAYMENT_MUTATION = gql`
       id
       amount
       date
-      note
+      notes
       contractId
       jobId
-      contactId
-      companyId
     }
   }
 `

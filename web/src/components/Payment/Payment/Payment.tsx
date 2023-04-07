@@ -56,8 +56,8 @@ const Payment = ({ payment }: Props) => {
               <td>{timeTag(payment.date)}</td>
             </tr>
             <tr>
-              <th>Note</th>
-              <td>{payment.note}</td>
+              <th>Notes</th>
+              <td>{payment.notes}</td>
             </tr>
             <tr>
               <th>Contract id</th>
@@ -66,14 +66,6 @@ const Payment = ({ payment }: Props) => {
             <tr>
               <th>Job id</th>
               <td>{payment.jobId}</td>
-            </tr>
-            <tr>
-              <th>Contact id</th>
-              <td>{payment.contactId}</td>
-            </tr>
-            <tr>
-              <th>Company id</th>
-              <td>{payment.companyId}</td>
             </tr>
           </tbody>
         </table>

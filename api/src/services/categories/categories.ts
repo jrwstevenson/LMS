@@ -32,10 +32,10 @@ export const deleteCategory: MutationResolvers["deleteCategory"] = ({ id }) => {
 }
 
 export const Category: CategoryRelationResolvers = {
-  Contract: (_obj, { root }) => {
-    return db.category.findUnique({ where: { id: root?.id } }).Contract()
+  contracts: (_obj, { root }) => {
+    return db.category.findUnique({ where: { id: root?.id } }).contracts()
   },
-  Job: (_obj, { root }) => {
-    return db.category.findUnique({ where: { id: root?.id } }).Job()
+  jobs: (_obj, { root }) => {
+    return db.category.findUnique({ where: { id: root?.id } }).jobs()
   },
 }

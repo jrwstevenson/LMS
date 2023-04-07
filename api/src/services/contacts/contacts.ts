@@ -32,16 +32,16 @@ export const deleteContact: MutationResolvers["deleteContact"] = ({ id }) => {
 }
 
 export const Contact: ContactRelationResolvers = {
-  Contract: (_obj, { root }) => {
-    return db.contact.findUnique({ where: { id: root?.id } }).Contract()
+  building: (_obj, { root }) => {
+    return db.contact.findUnique({ where: { id: root?.id } }).building()
   },
-  Job: (_obj, { root }) => {
-    return db.contact.findUnique({ where: { id: root?.id } }).Job()
+  company: (_obj, { root }) => {
+    return db.contact.findUnique({ where: { id: root?.id } }).company()
   },
-  Company: (_obj, { root }) => {
-    return db.contact.findUnique({ where: { id: root?.id } }).Company()
+  contract: (_obj, { root }) => {
+    return db.contact.findUnique({ where: { id: root?.id } }).contract()
   },
-  Payment: (_obj, { root }) => {
-    return db.contact.findUnique({ where: { id: root?.id } }).Payment()
+  job: (_obj, { root }) => {
+    return db.contact.findUnique({ where: { id: root?.id } }).job()
   },
 }

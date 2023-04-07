@@ -64,16 +64,20 @@ const Contact = ({ contact }: Props) => {
               <td>{contact.notes}</td>
             </tr>
             <tr>
+              <th>Building id</th>
+              <td>{contact.buildingId}</td>
+            </tr>
+            <tr>
+              <th>Company id</th>
+              <td>{contact.companyId}</td>
+            </tr>
+            <tr>
               <th>Contract id</th>
               <td>{contact.contractId}</td>
             </tr>
             <tr>
               <th>Job id</th>
               <td>{contact.jobId}</td>
-            </tr>
-            <tr>
-              <th>Company id</th>
-              <td>{contact.companyId}</td>
             </tr>
           </tbody>
         </table>

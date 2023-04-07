@@ -7,13 +7,13 @@ export const schema = gql`
     endDate: DateTime
     amount: Float
     building: Building!
-    categories: [Category]!
-    job: [Job]!
-    contacts: [Contact]!
-    company: Company
-    payments: [Payment]!
     buildingId: Int!
+    company: Company
     companyId: Int
+    categories: [Category]!
+    contacts: [Contact]!
+    jobs: [Job]!
+    payments: [Payment]!
   }
 
   type Query {

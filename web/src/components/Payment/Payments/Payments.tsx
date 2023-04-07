@@ -44,11 +44,9 @@ const PaymentsList = ({ payments }: FindPayments) => {
             <th>Id</th>
             <th>Amount</th>
             <th>Date</th>
-            <th>Note</th>
+            <th>Notes</th>
             <th>Contract id</th>
             <th>Job id</th>
-            <th>Contact id</th>
-            <th>Company id</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -58,11 +56,9 @@ const PaymentsList = ({ payments }: FindPayments) => {
               <td>{truncate(payment.id)}</td>
               <td>{truncate(payment.amount)}</td>
               <td>{timeTag(payment.date)}</td>
-              <td>{truncate(payment.note)}</td>
+              <td>{truncate(payment.notes)}</td>
               <td>{truncate(payment.contractId)}</td>
               <td>{truncate(payment.jobId)}</td>
-              <td>{truncate(payment.contactId)}</td>
-              <td>{truncate(payment.companyId)}</td>
               <td>
                 <nav className="rw-table-actions">
                   <Link

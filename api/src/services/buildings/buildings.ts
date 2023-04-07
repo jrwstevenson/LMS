@@ -32,10 +32,13 @@ export const deleteBuilding: MutationResolvers["deleteBuilding"] = ({ id }) => {
 }
 
 export const Building: BuildingRelationResolvers = {
-  Contract: (_obj, { root }) => {
-    return db.building.findUnique({ where: { id: root?.id } }).Contract()
+  contacts: (_obj, { root }) => {
+    return db.building.findUnique({ where: { id: root?.id } }).contacts()
   },
-  Job: (_obj, { root }) => {
-    return db.building.findUnique({ where: { id: root?.id } }).Job()
+  contracts: (_obj, { root }) => {
+    return db.building.findUnique({ where: { id: root?.id } }).contracts()
+  },
+  jobs: (_obj, { root }) => {
+    return db.building.findUnique({ where: { id: root?.id } }).jobs()
   },
 }

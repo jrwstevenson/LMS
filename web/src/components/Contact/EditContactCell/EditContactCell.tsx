@@ -15,9 +15,10 @@ export const QUERY = gql`
       email
       phone
       notes
+      buildingId
+      companyId
       contractId
       jobId
-      companyId
     }
   }
 `
@@ -29,9 +30,10 @@ const UPDATE_CONTACT_MUTATION = gql`
       email
       phone
       notes
+      buildingId
+      companyId
       contractId
       jobId
-      companyId
     }
   }
 `

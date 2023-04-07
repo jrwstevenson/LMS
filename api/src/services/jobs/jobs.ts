@@ -32,22 +32,22 @@ export const deleteJob: MutationResolvers["deleteJob"] = ({ id }) => {
 }
 
 export const Job: JobRelationResolvers = {
-  payments: (_obj, { root }) => {
-    return db.job.findUnique({ where: { id: root?.id } }).payments()
-  },
-  contract: (_obj, { root }) => {
-    return db.job.findUnique({ where: { id: root?.id } }).contract()
-  },
-  contacts: (_obj, { root }) => {
-    return db.job.findUnique({ where: { id: root?.id } }).contacts()
+  building: (_obj, { root }) => {
+    return db.job.findUnique({ where: { id: root?.id } }).building()
   },
   company: (_obj, { root }) => {
     return db.job.findUnique({ where: { id: root?.id } }).company()
   },
-  building: (_obj, { root }) => {
-    return db.job.findUnique({ where: { id: root?.id } }).building()
+  contract: (_obj, { root }) => {
+    return db.job.findUnique({ where: { id: root?.id } }).contract()
   },
   categories: (_obj, { root }) => {
     return db.job.findUnique({ where: { id: root?.id } }).categories()
+  },
+  contacts: (_obj, { root }) => {
+    return db.job.findUnique({ where: { id: root?.id } }).contacts()
+  },
+  payments: (_obj, { root }) => {
+    return db.job.findUnique({ where: { id: root?.id } }).payments()
   },
 }

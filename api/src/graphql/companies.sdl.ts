@@ -4,9 +4,8 @@ export const schema = gql`
     name: String!
     notes: String
     contacts: [Contact]!
-    Contract: [Contract]!
-    Job: [Job]!
-    Payment: [Payment]!
+    contracts: [Contract]!
+    jobs: [Job]!
   }
 
   type Query {

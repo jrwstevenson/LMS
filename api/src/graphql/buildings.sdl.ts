@@ -6,13 +6,14 @@ export const schema = gql`
     description: String!
     address: String!
     createdAt: DateTime!
-    Contract: [Contract]!
-    Job: [Job]!
+    contacts: [Contact]!
+    contracts: [Contract]!
+    jobs: [Job]!
   }
 
   type Query {
-    buildings: [Building!]! @skipAuth
-    building(id: Int!): Building @skipAuth
+    buildings: [Building!]! @requireAuth
+    building(id: Int!): Building @requireAuth
   }
 
   input CreateBuildingInput {
