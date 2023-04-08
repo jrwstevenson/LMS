@@ -17,48 +17,6 @@ import { useAuth } from "./auth"
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
-      <Set wrap={AdminLayout} title="Payments" titleTo="payments" buttonLabel="New Payment" buttonTo="newPayment">
-        <Route path="/payments/new" page={PaymentNewPaymentPage} name="newPayment" />
-        <Route path="/payments/{id:Int}/edit" page={PaymentEditPaymentPage} name="editPayment" />
-        <Route path="/payments/{id:Int}" page={PaymentPaymentPage} name="payment" />
-        <Route path="/payments" page={PaymentPaymentsPage} name="payments" />
-      </Set>
-      <Set wrap={AdminLayout} title="Contacts" titleTo="contacts" buttonLabel="New Contact" buttonTo="newContact">
-        <Route path="/contacts/new" page={ContactNewContactPage} name="newContact" />
-        <Route path="/contacts/{id:Int}/edit" page={ContactEditContactPage} name="editContact" />
-        <Route path="/contacts/{id:Int}" page={ContactContactPage} name="contact" />
-        <Route path="/contacts" page={ContactContactsPage} name="contacts" />
-      </Set>
-      <Set wrap={AdminLayout} title="Companies" titleTo="companies" buttonLabel="New Company" buttonTo="newCompany">
-        <Route path="/companies/new" page={CompanyNewCompanyPage} name="newCompany" />
-        <Route path="/companies/{id:Int}/edit" page={CompanyEditCompanyPage} name="editCompany" />
-        <Route path="/companies/{id:Int}" page={CompanyCompanyPage} name="company" />
-        <Route path="/companies" page={CompanyCompaniesPage} name="companies" />
-      </Set>
-      <Set wrap={AdminLayout} title="Jobs" titleTo="jobs" buttonLabel="New Job" buttonTo="newJob">
-        <Route path="/jobs/new" page={JobNewJobPage} name="newJob" />
-        <Route path="/jobs/{id:Int}/edit" page={JobEditJobPage} name="editJob" />
-        <Route path="/jobs/{id:Int}" page={JobJobPage} name="job" />
-        <Route path="/jobs" page={JobJobsPage} name="jobs" />
-      </Set>
-      <Set wrap={AdminLayout} title="Contracts" titleTo="contracts" buttonLabel="New Contract" buttonTo="newContract">
-        <Route path="/contracts/new" page={ContractNewContractPage} name="newContract" />
-        <Route path="/contracts/{id:Int}/edit" page={ContractEditContractPage} name="editContract" />
-        <Route path="/contracts/{id:Int}" page={ContractContractPage} name="contract" />
-        <Route path="/contracts" page={ContractContractsPage} name="contracts" />
-      </Set>
-      <Set wrap={AdminLayout} title="Categories" titleTo="categories" buttonLabel="New Category" buttonTo="newCategory">
-        <Route path="/categories/new" page={CategoryNewCategoryPage} name="newCategory" />
-        <Route path="/categories/{id:Int}/edit" page={CategoryEditCategoryPage} name="editCategory" />
-        <Route path="/categories/{id:Int}" page={CategoryCategoryPage} name="category" />
-        <Route path="/categories" page={CategoryCategoriesPage} name="categories" />
-      </Set>
-      <Set wrap={AdminLayout} title="Buildings" titleTo="buildings" buttonLabel="New Building" buttonTo="newBuilding">
-        <Route path="/buildings/new" page={BuildingNewBuildingPage} name="newBuilding" />
-        <Route path="/buildings/{id:Int}/edit" page={BuildingEditBuildingPage} name="editBuilding" />
-        <Route path="/buildings/{id:Int}" page={BuildingBuildingPage} name="building" />
-        <Route path="/buildings" page={BuildingBuildingsPage} name="buildings" />
-      </Set>
       {/* Auth */}
       <Route path="/login" page={LoginPage} name="login" />
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
@@ -74,49 +32,49 @@ const Routes = () => {
       {/* Admin */}
       <Private unauthenticated="home">
         <Set wrap={AdminLayout} title="Admin" titleTo="admin">
-          <Route path="/admin" page={AdminPage} name="admin" />
+          <Route path="/admin" page={AdminAdminPage} name="admin" />
         </Set>
         <Set wrap={AdminLayout} title="Payments" titleTo="payments" buttonLabel="New Payment" buttonTo="newPayment">
-          <Route path="/admin/payments/new" page={PaymentNewPaymentPage} name="newPayment" />
-          <Route path="/admin/payments/{id:Int}/edit" page={PaymentEditPaymentPage} name="editPayment" />
-          <Route path="/admin/payments/{id:Int}" page={PaymentPaymentPage} name="payment" />
-          <Route path="/admin/payments" page={PaymentPaymentsPage} name="payments" />
+          <Route path="/admin/payments/new" page={AdminPaymentNewPaymentPage} name="newPayment" />
+          <Route path="/admin/payments/{id:Int}/edit" page={AdminPaymentEditPaymentPage} name="editPayment" />
+          <Route path="/admin/payments/{id:Int}" page={AdminPaymentPaymentPage} name="payment" />
+          <Route path="/admin/payments" page={AdminPaymentPaymentsPage} name="payments" />
         </Set>
         <Set wrap={AdminLayout} title="Contacts" titleTo="contacts" buttonLabel="New Contact" buttonTo="newContact">
-          <Route path="/admin/contacts/new" page={ContactNewContactPage} name="newContact" />
-          <Route path="/admin/contacts/{id:Int}/edit" page={ContactEditContactPage} name="editContact" />
-          <Route path="/admin/contacts/{id:Int}" page={ContactContactPage} name="contact" />
-          <Route path="/admin/contacts" page={ContactContactsPage} name="contacts" />
+          <Route path="/admin/contacts/new" page={AdminContactNewContactPage} name="newContact" />
+          <Route path="/admin/contacts/{id:Int}/edit" page={AdminContactEditContactPage} name="editContact" />
+          <Route path="/admin/contacts/{id:Int}" page={AdminContactContactPage} name="contact" />
+          <Route path="/admin/contacts" page={AdminContactContactsPage} name="contacts" />
         </Set>
         <Set wrap={AdminLayout} title="Companies" titleTo="companies" buttonLabel="New Company" buttonTo="newCompany">
-          <Route path="/admin/companies/new" page={CompanyNewCompanyPage} name="newCompany" />
-          <Route path="/admin/companies/{id:Int}/edit" page={CompanyEditCompanyPage} name="editCompany" />
-          <Route path="/admin/companies/{id:Int}" page={CompanyCompanyPage} name="company" />
-          <Route path="/admin/companies" page={CompanyCompaniesPage} name="companies" />
+          <Route path="/admin/companies/new" page={AdminCompanyNewCompanyPage} name="newCompany" />
+          <Route path="/admin/companies/{id:Int}/edit" page={AdminCompanyEditCompanyPage} name="editCompany" />
+          <Route path="/admin/companies/{id:Int}" page={AdminCompanyCompanyPage} name="company" />
+          <Route path="/admin/companies" page={AdminCompanyCompaniesPage} name="companies" />
         </Set>
         <Set wrap={AdminLayout} title="Jobs" titleTo="jobs" buttonLabel="New Job" buttonTo="newJob">
-          <Route path="/admin/jobs/new" page={JobNewJobPage} name="newJob" />
-          <Route path="/admin/jobs/{id:Int}/edit" page={JobEditJobPage} name="editJob" />
-          <Route path="/admin/jobs/{id:Int}" page={JobJobPage} name="job" />
-          <Route path="/admin/jobs" page={JobJobsPage} name="jobs" />
+          <Route path="/admin/jobs/new" page={AdminJobNewJobPage} name="newJob" />
+          <Route path="/admin/jobs/{id:Int}/edit" page={AdminJobEditJobPage} name="editJob" />
+          <Route path="/admin/jobs/{id:Int}" page={AdminJobJobPage} name="job" />
+          <Route path="/admin/jobs" page={AdminJobJobsPage} name="jobs" />
         </Set>
         <Set wrap={AdminLayout} title="Contracts" titleTo="contracts" buttonLabel="New Contract" buttonTo="newContract">
-          <Route path="/admin/contracts/new" page={ContractNewContractPage} name="newContract" />
-          <Route path="/admin/contracts/{id:Int}/edit" page={ContractEditContractPage} name="editContract" />
-          <Route path="/admin/contracts/{id:Int}" page={ContractContractPage} name="contract" />
-          <Route path="/admin/contracts" page={ContractContractsPage} name="contracts" />
+          <Route path="/admin/contracts/new" page={AdminContractNewContractPage} name="newContract" />
+          <Route path="/admin/contracts/{id:Int}/edit" page={AdminContractEditContractPage} name="editContract" />
+          <Route path="/admin/contracts/{id:Int}" page={AdminContractContractPage} name="contract" />
+          <Route path="/admin/contracts" page={AdminContractContractsPage} name="contracts" />
         </Set>
         <Set wrap={AdminLayout} title="Categories" titleTo="categories" buttonLabel="New Category" buttonTo="newCategory">
-          <Route path="/admin/categories/new" page={CategoryNewCategoryPage} name="newCategory" />
-          <Route path="/admin/categories/{id:Int}/edit" page={CategoryEditCategoryPage} name="editCategory" />
-          <Route path="/admin/categories/{id:Int}" page={CategoryCategoryPage} name="category" />
-          <Route path="/admin/categories" page={CategoryCategoriesPage} name="categories" />
+          <Route path="/admin/categories/new" page={AdminCategoryNewCategoryPage} name="newCategory" />
+          <Route path="/admin/categories/{id:Int}/edit" page={AdminCategoryEditCategoryPage} name="editCategory" />
+          <Route path="/admin/categories/{id:Int}" page={AdminCategoryCategoryPage} name="category" />
+          <Route path="/admin/categories" page={AdminCategoryCategoriesPage} name="categories" />
         </Set>
         <Set wrap={AdminLayout} title="Buildings" titleTo="buildings" buttonLabel="New Building" buttonTo="newBuilding">
-          <Route path="/admin/buildings/new" page={BuildingNewBuildingPage} name="newBuilding" />
-          <Route path="/admin/buildings/{id:Int}/edit" page={BuildingEditBuildingPage} name="editBuilding" />
-          <Route path="/admin/buildings/{id:Int}" page={BuildingBuildingPage} name="building" />
-          <Route path="/admin/buildings" page={BuildingBuildingsPage} name="buildings" />
+          <Route path="/admin/buildings/new" page={AdminBuildingNewBuildingPage} name="newBuilding" />
+          <Route path="/admin/buildings/{id:Int}/edit" page={AdminBuildingEditBuildingPage} name="editBuilding" />
+          <Route path="/admin/buildings/{id:Int}" page={AdminBuildingBuildingPage} name="building" />
+          <Route path="/admin/buildings" page={AdminBuildingBuildingsPage} name="buildings" />
         </Set>
       </Private>
       <Route notfound page={NotFoundPage} />
