@@ -24,30 +24,20 @@ describe("buildings", () => {
 
   scenario("creates a building", async () => {
     const result = await createBuilding({
-      input: {
-        id: 8567168,
-        name: "String",
-        description: "String",
-        address: "String",
-        createdAt: "2023-04-07T13:57:03.406Z",
-      },
+      input: { name: "String" },
     })
 
-    expect(result.id).toEqual(8567168)
     expect(result.name).toEqual("String")
-    expect(result.description).toEqual("String")
-    expect(result.address).toEqual("String")
-    expect(result.createdAt).toEqual(new Date("2023-04-07T13:57:03.406Z"))
   })
 
   scenario("updates a building", async (scenario: StandardScenario) => {
     const original = (await building({ id: scenario.building.one.id })) as Building
     const result = await updateBuilding({
       id: original.id,
-      input: { id: 3075557 },
+      input: { name: "String2" },
     })
 
-    expect(result.id).toEqual(3075557)
+    expect(result.name).toEqual("String2")
   })
 
   scenario("deletes a building", async (scenario: StandardScenario) => {

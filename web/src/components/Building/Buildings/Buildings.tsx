@@ -3,7 +3,7 @@ import { useMutation } from "@redwoodjs/web"
 import { toast } from "@redwoodjs/web/toast"
 
 import { QUERY } from "src/components/Building/BuildingsCell"
-import { timeTag, truncate } from "src/lib/formatters"
+import { truncate } from "src/lib/formatters"
 
 import type { DeleteBuildingMutationVariables, FindBuildings } from "types/graphql"
 
@@ -44,9 +44,7 @@ const BuildingsList = ({ buildings }: FindBuildings) => {
             <th>Id</th>
             <th>Name</th>
             <th>Notes</th>
-            <th>Description</th>
             <th>Address</th>
-            <th>Created at</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -56,9 +54,7 @@ const BuildingsList = ({ buildings }: FindBuildings) => {
               <td>{truncate(building.id)}</td>
               <td>{truncate(building.name)}</td>
               <td>{truncate(building.notes)}</td>
-              <td>{truncate(building.description)}</td>
               <td>{truncate(building.address)}</td>
-              <td>{timeTag(building.createdAt)}</td>
               <td>
                 <nav className="rw-table-actions">
                   <Link

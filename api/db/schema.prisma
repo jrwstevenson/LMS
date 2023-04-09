@@ -13,19 +13,17 @@ generator client {
 // TODO: Please remove the following example:
 
 model Building {
-  id          Int        @id @unique
-  name        String
-  notes       String?
-  description String
-  address     String
-  createdAt   DateTime
-  contacts    Contact[]
-  contracts   Contract[]
-  jobs        Job[]
+  id        Int        @id @unique @default(autoincrement())
+  name      String
+  notes     String?
+  address   String?
+  contacts  Contact[]
+  contracts Contract[]
+  jobs      Job[]
 }
 
 model Category {
-  id        Int        @id @unique
+  id        Int        @id @unique @default(autoincrement())
   name      String     @unique
   notes     String?
   contracts Contract[]
@@ -33,7 +31,7 @@ model Category {
 }
 
 model Contract {
-  id         Int        @id @unique
+  id         Int        @id @unique @default(autoincrement())
   name       String
   notes      String?
   startDate  DateTime?
@@ -50,7 +48,7 @@ model Contract {
 }
 
 model Job {
-  id         Int        @id @unique
+  id         Int        @id @unique @default(autoincrement())
   name       String
   notes      String?
   date       DateTime?

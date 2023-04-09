@@ -10,9 +10,7 @@ export const QUERY = gql`
       id
       name
       notes
-      description
       address
-      createdAt
     }
   }
 `

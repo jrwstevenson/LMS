@@ -3,9 +3,7 @@ export const schema = gql`
     id: Int!
     name: String!
     notes: String
-    description: String!
-    address: String!
-    createdAt: DateTime!
+    address: String
     contacts: [Contact]!
     contracts: [Contract]!
     jobs: [Job]!
@@ -19,14 +17,12 @@ export const schema = gql`
   input CreateBuildingInput {
     name: String!
     notes: String
-    description: String!
-    address: String!
+    address: String
   }
 
   input UpdateBuildingInput {
     name: String
     notes: String
-    description: String
     address: String
   }
 

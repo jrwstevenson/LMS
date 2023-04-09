@@ -13,9 +13,7 @@ export const QUERY = gql`
       id
       name
       notes
-      description
       address
-      createdAt
     }
   }
 `
@@ -25,9 +23,7 @@ const UPDATE_BUILDING_MUTATION = gql`
       id
       name
       notes
-      description
       address
-      createdAt
     }
   }
 `

@@ -54,20 +54,6 @@ const BuildingForm = (props: BuildingFormProps) => {
 
         <FieldError name="notes" className="rw-field-error" />
 
-        <Label name="description" className="rw-label" errorClassName="rw-label rw-label-error">
-          Description
-        </Label>
-
-        <TextField
-          name="description"
-          defaultValue={props.building?.description}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
-
-        <FieldError name="description" className="rw-field-error" />
-
         <Label name="address" className="rw-label" errorClassName="rw-label rw-label-error">
           Address
         </Label>
@@ -77,7 +63,6 @@ const BuildingForm = (props: BuildingFormProps) => {
           defaultValue={props.building?.address}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
         />
 
         <FieldError name="address" className="rw-field-error" />

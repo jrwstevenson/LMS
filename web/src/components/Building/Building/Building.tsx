@@ -2,7 +2,7 @@ import { Link, routes, navigate } from "@redwoodjs/router"
 import { useMutation } from "@redwoodjs/web"
 import { toast } from "@redwoodjs/web/toast"
 
-import { timeTag } from "src/lib/formatters"
+import {} from "src/lib/formatters"
 
 import type { DeleteBuildingMutationVariables, FindBuildingById } from "types/graphql"
 
@@ -56,16 +56,8 @@ const Building = ({ building }: Props) => {
               <td>{building.notes}</td>
             </tr>
             <tr>
-              <th>Description</th>
-              <td>{building.description}</td>
-            </tr>
-            <tr>
               <th>Address</th>
               <td>{building.address}</td>
-            </tr>
-            <tr>
-              <th>Created at</th>
-              <td>{timeTag(building.createdAt)}</td>
             </tr>
           </tbody>
         </table>
