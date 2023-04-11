@@ -7,9 +7,7 @@ export const QUERY = gql`
     site: building(id: $id) {
       id
       name
-      description
       address
-      createdAt
     }
   }
 `

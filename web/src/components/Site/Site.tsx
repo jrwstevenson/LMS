@@ -14,8 +14,6 @@ const Site = ({ site }: Props) => {
         </h2>
       </header>
       <div className="mt-2 font-light text-gray-900">
-        <p>{site.description}</p>
-        <div>Posted at: {site.createdAt}</div>
         <div>Address: {site.address}</div>
       </div>
     </div>
