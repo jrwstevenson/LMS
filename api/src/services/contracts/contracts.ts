@@ -3,12 +3,21 @@ import type { QueryResolvers, MutationResolvers, ContractRelationResolvers } fro
 import { db } from "src/lib/db"
 
 export const contracts: QueryResolvers["contracts"] = () => {
-  return db.contract.findMany()
+  return db.contract.findMany({
+    include: {
+      building: true,
+      categories: true,
+    },
+  })
 }
 
 export const contract: QueryResolvers["contract"] = ({ id }) => {
   return db.contract.findUnique({
     where: { id },
+    include: {
+      building: true,
+      categories: true,
+    },
   })
 }
 
@@ -20,7 +29,7 @@ export const createContract: MutationResolvers["createContract"] = ({ input }) =
 
 export const updateContract: MutationResolvers["updateContract"] = ({ id, input }) => {
   return db.contract.update({
-    data: input,
+    data: { ...input, categories: { set: input.categories.map(id => ({ id })) } },
     where: { id },
   })
 }

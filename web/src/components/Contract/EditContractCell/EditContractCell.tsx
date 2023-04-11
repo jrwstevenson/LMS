@@ -18,6 +18,17 @@ export const QUERY = gql`
       amount
       buildingId
       companyId
+      categories {
+        id
+      }
+    }
+    categories {
+      id
+      name
+    }
+    buildings {
+      id
+      name
     }
   }
 `
@@ -42,7 +53,11 @@ export const Failure = ({ error }: CellFailureProps) => (
   <div className="rw-cell-error">{error?.message}</div>
 )
 
-export const Success = ({ contract }: CellSuccessProps<EditContractById>) => {
+export const Success = ({
+  contract,
+  categories,
+  buildings,
+}: CellSuccessProps<EditContractById>) => {
   const [updateContract, { loading, error }] = useMutation(UPDATE_CONTRACT_MUTATION, {
     onCompleted: () => {
       toast.success("Contract updated")
@@ -60,10 +75,19 @@ export const Success = ({ contract }: CellSuccessProps<EditContractById>) => {
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">Edit Contract {contract?.id}</h2>
+        <h2 className="rw-heading rw-heading-secondary">
+          Edit Contract <span className="text-purple-600">{contract?.name}</span>
+        </h2>
       </header>
       <div className="rw-segment-main">
-        <ContractForm contract={contract} onSave={onSave} error={error} loading={loading} />
+        <ContractForm
+          contract={contract}
+          buildings={buildings}
+          categories={categories}
+          onSave={onSave}
+          error={error}
+          loading={loading}
+        />
       </div>
     </div>
   )

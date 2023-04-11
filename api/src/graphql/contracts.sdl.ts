@@ -39,6 +39,7 @@ export const schema = gql`
     amount: Float
     buildingId: Int
     companyId: Int
+    categories: [Int]
   }
 
   type Mutation {
